@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/ui5con-smart-store/static/css/main.d839cec1.chunk.css",
+    "main.js": "/ui5con-smart-store/static/js/main.846aa568.chunk.js",
+    "main.js.map": "/ui5con-smart-store/static/js/main.846aa568.chunk.js.map",
+    "runtime~main.js": "/ui5con-smart-store/static/js/runtime~main.6be4a9c8.js",
+    "runtime~main.js.map": "/ui5con-smart-store/static/js/runtime~main.6be4a9c8.js.map",
+    "static/js/2.0097e4f1.chunk.js": "/ui5con-smart-store/static/js/2.0097e4f1.chunk.js",
+    "static/js/2.0097e4f1.chunk.js.map": "/ui5con-smart-store/static/js/2.0097e4f1.chunk.js.map",
+    "index.html": "/ui5con-smart-store/index.html",
+    "precache-manifest.b684a4537cf4d0912135035167cc37c7.js": "/ui5con-smart-store/precache-manifest.b684a4537cf4d0912135035167cc37c7.js",
+    "service-worker.js": "/ui5con-smart-store/service-worker.js",
+    "static/css/main.d839cec1.chunk.css.map": "/ui5con-smart-store/static/css/main.d839cec1.chunk.css.map",
+    "static/media/logo.png": "/ui5con-smart-store/static/media/logo.60a8874b.png",
+    "static/media/profile.png": "/ui5con-smart-store/static/media/profile.c5319308.png"
+  }
+}
