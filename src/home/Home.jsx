@@ -104,18 +104,18 @@ class Home extends Component {
             status="6 of 6"
             className="ui5card ui5card-large">
             <div className="card-content">
-              <StandardListItem separators="Inner" className="card-content-child">
+              <List separators="Inner" className="card-content-child">
                 {data.storesa.map(store =>
                   <StandardListItem key={store.key} image={managerImg}
                                     description={store.description}>{store.title}</StandardListItem>
                 )}
-              </StandardListItem>
-              <StandardListItem separators="Inner" className="card-content-child">
+              </List>
+              <List separators="Inner" className="card-content-child">
                 {data.storesb.map(store =>
                   <StandardListItem key={store.key} image={managerImg}
                                     description={store.description}>{store.title}</StandardListItem>
                 )}
-              </StandardListItem>
+              </List>
             </div>
           </Card>
         </section>
