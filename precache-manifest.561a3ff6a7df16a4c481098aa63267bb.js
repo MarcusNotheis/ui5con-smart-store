@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5556ae3b49fca11502a81d600080c1d2",
+    "revision": "5b3e343611b9b630728e19e375a52577",
     "url": "/ui5con-smart-store/index.html"
   },
   {
-    "revision": "6b1154a182842b53208c",
+    "revision": "81e8102430a1c560b694",
     "url": "/ui5con-smart-store/static/css/main.d839cec1.chunk.css"
   },
   {
-    "revision": "48a241f10f8f28e17614",
-    "url": "/ui5con-smart-store/static/js/2.0097e4f1.chunk.js"
+    "revision": "009401b8610242620da5",
+    "url": "/ui5con-smart-store/static/js/2.96394ac4.chunk.js"
   },
   {
-    "revision": "6b1154a182842b53208c",
-    "url": "/ui5con-smart-store/static/js/main.846aa568.chunk.js"
+    "revision": "81e8102430a1c560b694",
+    "url": "/ui5con-smart-store/static/js/main.34ef5709.chunk.js"
   },
   {
     "revision": "b0167a04ad30f6d49826",
