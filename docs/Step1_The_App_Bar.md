@@ -15,44 +15,47 @@ Let`s create this beautiful application bar!
 	import * as serviceWorker from './serviceWorker';
 	serviceWorker.unregister();
 	```
+	
+3. Rename the `App.js` file to `App.jsx`. 
+   This is not required, but I prefer the convention of having the `jsx` file extension for React components.
 
-3. We will use the `ui5-shellbar` for an app bar, so let's import it in the `src/App.js`. The component has several convenient attributes that we are going to use.
-Note: We are replacing the `ui5-button` from the previous step with the `ui5-shellbar`.
+4. We will use the `Shellbar` for an app bar, so let's import it in the `src/App.js`. The component has several convenient attributes that we are going to use.
+Note: We are replacing the `Button` from the previous step with the `ShellBar`.
 
 	```js 
-	import "@ui5/webcomponents/dist/ShellBar";
+	import "@ui5/webcomponents-react/lib/ShellBar";
 
 	function App() {
 		return (
-			<ui5-shellbar
-				primary-title="Smart Store Manager"
-				show-notifications
-				show-product-switch
-				show-co-pilot>
-			</ui5-shellbar>
+			<ShellBar
+				primaryTitle="Smart Store Manager"
+				showNotifications
+				showProductSwitch
+				showCoPilot>
+			</ShellBar>
 		);
 	}
 	```
 
-4. Create "img" folder under "src" and copy the `logo.png` and `profile.png` files from `src/img` from [Sources of Smart Store](https://github.com/ilhan007/ui5con-app/tree/master/src/img) (look for a "download" button, when you click on one of the images).
+5. Create "img" folder under "src" and copy the `logo.png` and `profile.png` files from `src/img` from [Sources of Smart Store](https://github.com/MarcusNotheis/ui5con-smart-store/tree/master/src/img) (look for a "download" button, when you click on one of the images).
 
-5. Then, import those images and set them to the `logo` and `profile` attributes of the `ui5-shellbar`.
+6. Then, import those images and set them to the `logo` and `profile` attributes of the `ShellBar`.
 
 	```js 
 	import profile from "./img/profile.png";
 	import logo from "./img/logo.png";
-	import "@ui5/webcomponents/dist/ShellBar";
+	import "@ui5/webcomponents-react/lib/ShellBar";
 
 	function App() {
 		return (
-			<ui5-shellbar
-				primary-title="Smart Store Manager"
-				show-notifications
-				show-product-switch
-				show-co-pilot
-				profile={profile}
-				logo={logo}>
-			</ui5-shellbar>
+			<ShellBar
+			    primaryTitle="Smart Store Manager"
+			    showNotifications
+			    showProductSwitch
+			    showCoPilot
+			    profile={profile}
+			    logo={logo}>
+			</ShellBar>
 		);
 	}
 	```
