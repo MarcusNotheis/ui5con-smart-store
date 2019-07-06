@@ -1,8 +1,8 @@
 {
-  "name": "ui5con-app",
+  "name": "ui5con-smart-store-react",
   "version": "0.1.0",
   "private": false,
-  "homepage": "http://MarcusNotheis.github.io/ui5con-smart-store",
+  "homepage": "http://marcusnotheis.github.io/ui5con-smart-store",
   "dependencies": {
     "@ui5/webcomponents-react": "^0.3.2-rc.13",
     "react": "^16.8.6",

@@ -1,8 +1,8 @@
 # Smart Store app
 
-The [Smart Store app](https://ilhan007.github.io/ui5con-app) is a [React](https://reactjs.org/) sample application, demonstrating the usage of the [UI5 Web Components](https://github.com/SAP/ui5-webcomponents). You can find a step by step tutorial below on how to build the app by yourself. You don't have to clone the repo, the app will be built from scratch.
+The [Smart Store app](http://marcusnotheis.github.io/ui5con-smart-store) is a [React](https://reactjs.org/) sample application, demonstrating the usage of the [UI5 Web Components for React](https://github.com/SAP/ui5-webcomponents-react). You can find a step by step tutorial below on how to build the app by yourself. You don't have to clone the repo, the app will be built from scratch.
 
-Note: no previous experience with [UI5 Web Components](https://github.com/SAP/ui5-webcomponents) is required.
+Note: no previous experience with [UI5 Web Components for React](https://github.com/SAP/ui5-webcomponents-react) is required.
 To take the most of the tutorial, a basic knowledge with [React](https://reactjs.org/) is desirable.
 
 ## Prerequisites
@@ -22,30 +22,30 @@ The Smart Store app enables a store manager to control his/her multiple stores. 
 	cd smart-store-app
 	```
 
-2. Install the UI5 Web Components.
+2. Install the UI5 Web Components for React library.
 
 	```sh
-	npm install @ui5/webcomponents
+	npm install @ui5/webcomponents-react
 	```
 
-3. Consume the UI5 Web Components.
+3. Consume the UI5 Web Components for React.
 
-	All the components can be imported from `"@ui5/webcomponents/dist/<component_name>";`
+	All the components can be imported from `"@ui5/webcomponents-react/lib/<component_name>";`
 	Import one of the available components in the `src/App.js`.
 	```js
-	import "@ui5/webcomponents/dist/Button"; // loads ui5-button
+	import "@ui5/webcomponents-react/lib/Button"; // loads ui5-button
 	```
  
-	Then, you can add the `ui5-button` in `src/App.js` and that`s it! 
+	Then, you can add the `Button` in `src/App.js` and that`s it! 
 
 	```js
 	function App() {
 		return (
-			<ui5-button>Hello world!</ui5-button>
+			<Button>Hello world!</ui5-button>
 		);
 	}
 	```
-4. Launch the app and you should see the `ui5-button` rendered on the screen.
+4. Launch the app and you should see the `Button` rendered on the screen.
 	```sh
 	npm start
 	```
@@ -61,8 +61,8 @@ The Smart Store app enables a store manager to control his/her multiple stores. 
 ### [Step #8 - Detail Page Create Item Dialog](./docs/Step8_Detail_add_new_item.md)
 
 ## Resources
-[Smart Store app](https://ilhan007.github.io/ui5con-app)
+[Smart Store app](http://marcusnotheis.github.io/ui5con-smart-store)
 
-[Sources of Smart Store App](https://github.com/ilhan007/ui5con-app)
+[Sources of Smart Store App](https://github.com/MarcusNotheis/ui5con-smart-store)
 
-[List of all available UI5 Web Components](https://sap.github.io/ui5-webcomponents/playground)
+[List of all available UI5 Web Components for React](https://sap.github.io/ui5-webcomponents-react)
