@@ -23,7 +23,7 @@ Let`s create this beautiful application bar!
 Note: We are replacing the `Button` from the previous step with the `ShellBar`.
 
 	```js 
-	import "@ui5/webcomponents-react/lib/ShellBar";
+	import { ShellBar } from "@ui5/webcomponents-react/lib/ShellBar";
 
 	function App() {
 		return (
@@ -42,9 +42,9 @@ Note: We are replacing the `Button` from the previous step with the `ShellBar`.
 6. Then, import those images and set them to the `logo` and `profile` attributes of the `ShellBar`.
 
 	```js 
+	import { ShellBar } from "@ui5/webcomponents-react/lib/ShellBar";
 	import profile from "./img/profile.png";
 	import logo from "./img/logo.png";
-	import "@ui5/webcomponents-react/lib/ShellBar";
 
 	function App() {
 		return (
