@@ -5,12 +5,12 @@ In this step we will create an empty Detail component and set up a routing and n
 
 1. Create `detail` folder under `src/`.
 
-2. Create `Detail.js` file under `src/detail/`.
+2. Create `Detail.jsx` file under `src/detail/`.
 
 3. Create the `Detail` component, that will return just the words "Hello World" for now.
 
 	```js 
-	// Detail.js
+	// Detail.jsx
 	import React, { Component } from "react";
 
 	class Detail extends Component {
@@ -30,136 +30,107 @@ In this step we will create an empty Detail component and set up a routing and n
 	Note: if the app shows an error after installing the above, you have to restart the dev server.
 
 5. Import the `HashRouter` from `react-router-dom` and wrap the root component in `index.js` file as below:
-
-	```js 
+    ```js 
 	// index.js
 	import { HashRouter } from 'react-router-dom';
 
 	ReactDOM.render(<HashRouter><App/></HashRouter>, document.getElementById('root'));
 	```
-
-
-
-6. Import the `Switch`, `Route`, `Redirect` from `react-router-dom` in `src/App.js`  and import the `Detail` component.
+	
+6. Import the `Switch`, `Route`, `Redirect` from `react-router-dom` in `src/App.jsx`  and import the `Detail` component.
 Then, use the `Switch` to set up the paths and which component to be displayed respectively. After you add the code below, you should get the `Home` component on the `/#/home` path and the `Detail` component on the `/#/detail` path.
-
-
-	```js 
+In addition to that, let's add the `onLogoClick` event to the ShellBar in order to navigate back to the start page.
+    ```js 
 	// App.js
 	import React, { Component } from "react";
 	import { Switch, Route, Redirect } from "react-router-dom";
 	import "./App.css";
 	import profile from "./img/profile.png";
 	import logo from "./img/logo.png";
+	import { ShellBar } from '@ui5/webcomponents-react/lib/Shellbar';
+    import Home from "./home/Home";
+    import Detail from './detail/Detail';
+    
+    const onLogoClick = () => {
+        window.location.hash = '#/home';
+    };
 
-	import "@ui5/webcomponents/dist/ShellBar";
-	import "@ui5/webcomponents/dist/Card";
-	import "@ui5/webcomponents/dist/Title";
-	import "@ui5/webcomponents/dist/Label";
-	import "@ui5/webcomponents/dist/List";
-	import "@ui5/webcomponents/dist/CustomListItem";
-	import "@ui5/webcomponents/dist/StandardListItem";
-
-	import Home from "./home/Home";
-	import Detail from './detail/Detail';
-
-	function App() {
-		return (
-			<div className="App">
-				<ui5-shellbar
-					primary-title="Smart Store Manager"
-					show-notifications
-					show-product-switch
-					show-co-pilot
-					profile={profile}
-					logo={logo}>
-				</ui5-shellbar>
-
-				<Switch>
-					<Route path='/home' component={Home}/>
-					<Route path='/detail' component={Detail}/>
-					<Redirect from="/" to="/home" />
-				</Switch>
-			</div>
-		);
+    function App() {
+        return (
+            <div className="App">
+                <ShellBar
+                    primaryTitle="Smart Store Manager"
+                    showNotifications
+                    showProductSwitch
+                    showCoPilot
+                    profile={profile}
+                    logo={logo}
+                    onLogoClick={onLogoClick}>
+                </ShellBar>
+                
+                <Switch>
+                    <Route path='/home' component={Home}/>
+                    <Route path='/detail' component={Detail}/>
+                    <Redirect from="/" to="/home" />
+                </Switch>
+            </div>
+        );
 	}
 	```
 
-7. Now, let's navigate to the `Detail` component by clicking the header of our "Inventory" card.  This would require changes in the `Home` component. 
+7. Now, let's navigate to the `Detail` component by clicking the header of our "Inventory" card.  This would require changes in the `Home` component.
+   First of all, we need to attach the `onHeaderClick` event to the Card and change the route.
 
-- Bind for the ui5-card `headerClick` event in `componentDidMount`
-- Change the hash in the listener `navToDetail`.
-
-	```js 
+	```jsx
 	// Home.js
 	import React, { Component } from "react";
-	import data from "./data.json";
+	...
 
 	class Home extends Component {
 
-	constructor (props) {
-		super(props);
-		
-		this.featuredCardsRefs = [];
-		this._navToDetail = this.navToDetail.bind(this);
-		this.state = {data};
-	}
-
-	// Bind for the "headerClick" event of the ui5-card
-	componentDidMount() {
-		const inventoryCardRef = this.featuredCardsRefs[0];
-
-		if (inventoryCardRef) {
-			inventoryCardRef.addEventListener("headerClick", this._navToDetail);
-		}
-	}
-
-	// Change the hash and let the router switch the views
-	navToDetail() {
-		this.props.history.push("/detail");
-	}
-
-	render() {
-		...
+	    // Change the hash and let the router switch the views
+	    navToDetail() {
+	    	this.props.history.push("/detail");
+	    }
+    
+	    render() {
+	    	return(
+                <div className="app-content">
+                    {/* Featured */}
+                    <Title level="H3">Featured</Title>
+                    <section className="section">
+                      {
+                        data.featured.map((dataObj) =>
+                          <Card
+                            key={dataObj.key}
+                            onHeaderClick={this.navToDetail}
+                            heading={dataObj.heading}
+                            subtitle={dataObj.subtitle}
+                            status={dataObj.status}
+                            headerInteractive
+                            className="ui5card">
+                            <List separators="Inner">
+                              {
+                                dataObj.items.map(item =>
+                                  <StandardListItem
+                                    key={item.key}
+                                    icon={item.icon}
+                                    description={item.description}
+                                    info={item.info}
+                                    infoState={item.infoState}
+                                    className="ui5list-item">{item.title}</StandardListItem>
+                                )
+                              }
+                            </List>
+                          </Card>
+                        )
+                      }
+                    </section>
+                </div>
+            );
 	}
 
 	export default Home;
-	```
-
-- Add "ref" to the ui5-card `ref={ref => this.featuredCardsRefs[index] = ref}` to get the DOM ref in order to add an event listener.
-
-	```html
-	return(
-		<div className="app-content">
-
-			<ui5-title level="H3">Featured</ui5-title>
-			<section className="section">
-			{data.featured.map((dataObj, index) => 
-			<ui5-card
-				ref={ref => this.featuredCardsRefs[index] = ref}
-				key={dataObj.key}
-				heading={dataObj.heading}
-				subtitle={dataObj.subtitle}
-				status={dataObj.status}
-				className="ui5card"
-				header-interactive
-			>
-					<ui5-list separators="Inner">
-					{dataObj.items.map(item =>
-					<ui5-li
-						key={item.key}
-						icon={item.icon}
-						description={item.description}
-						info={item.info}
-						info-state={item.infoState}
-						className="ui5list-item">{item.title}</ui5-li>
-					)}
-					</ui5-list>
-			</ui5-card>
-			)}
-			</section>
-		</div>
-	);
 	```
 
 	Now, you can click the header of the "Inventory" card and navigate to the `Detail` component.

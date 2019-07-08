@@ -1,6 +1,6 @@
 # Home component
 
-In this step we will make use of ```ui5-card``` as main building block for our home view. We will create the "Featured" section. As you can see below, it consists of two "cards" - "Inventory" and "Security". Each of them has a header and content section with a list of important information.
+In this step we will make use of ```Card``` as main building block for our home view. We will create the "Featured" section. As you can see below, it consists of two "cards" - "Inventory" and "Security". Each of them has a header and content section with a list of important information.
 
 ![Alt text](./step2.png?raw=true "Home")
 
