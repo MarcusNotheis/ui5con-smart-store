@@ -32,7 +32,7 @@ Create the `Home` component in `src/home/Home.jsx`. Note that we import the `dat
 			return(
 				<div className="app-content">
 					{/* Featured */}
-					<Title level="H3">Featured</ui5-title>
+					<Title level="H3">Featured</Title>
 					<section className="section">
 					</section>
 				</div>
