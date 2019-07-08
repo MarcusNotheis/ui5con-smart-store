@@ -33,7 +33,7 @@ The Smart Store app enables a store manager to control his/her multiple stores. 
 	All the components can be imported from `"@ui5/webcomponents-react/lib/<component_name>";`
 	Import one of the available components in the `src/App.js`.
 	```js
-	import "@ui5/webcomponents-react/lib/Button"; // loads ui5-button
+	import "@ui5/webcomponents-react/lib/Button"; //
 	```
  
 	Then, you can add the `Button` in `src/App.js` and that`s it! 
@@ -41,7 +41,7 @@ The Smart Store app enables a store manager to control his/her multiple stores. 
 	```js
 	function App() {
 		return (
-			<Button>Hello world!</ui5-button>
+			<Button>Hello world!</Button>
 		);
 	}
 	```
